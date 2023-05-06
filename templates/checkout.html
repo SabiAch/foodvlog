@@ -1,0 +1,292 @@
+{% load static %}
+{% block content %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title> Checkout</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'cr/img/core-img/favicon.ico' %}">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'cr/css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'cr/style.css' %}">
+
+    <!-- Responsive CSS -->
+    <link href="{% static 'cr/css/responsive.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+
+        <!-- ****** Header Area Start ****** -->
+        <header class="header_area bg-img background-overlay-white" style="background-image: url({% static 'cr/img/bg-img/bg-1.jpg' %});">
+            <!-- Top Header Area Start -->
+            <div class="top_header_area">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-end">
+
+                        <div class="col-12 col-lg-7">
+                            <div class="top_single_area d-flex align-items-center">
+                                
+                                <!-- Cart & Menu Area -->
+                                <div class="header-cart-menu d-flex align-items-center ml-auto">
+                                    <!-- Cart Area -->
+                                    <div class="cart">
+                                        <a href="#" id="header-cart-btn" target="_blank"><span class="cart_quantity">{{itc}}</span> <i class="ti-bag"></i> Your Bag</a>
+                                        <!-- Cart List Area Start -->
+                                        <ul class="cart-list">
+                                            
+                                            <li>
+                                             {% for i in ch %}
+                                                <a href={{i.prodt.get_url}}><img src={{i.prodt.img.url}} alt="{{i.prodt.name}}"></a>
+                                                <div class="cart-item-desc">
+                                                <a href={{i.prodt.get_url}} ><h6>{{i.prodt.name}}</h6></a>
+                                                <p><span class="price"><span>{{i.prodt.price}}</span></span></p>
+                                                </div>
+                                                <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
+                                            </li>
+                                            
+                                             
+                                            <li>
+                                                <a href={{i.prodt.get_url}} class="image"><img src={{i.prodt.img.url}} class="cart-thumb" alt=""></a>
+                                                <div class="cart-item-desc">
+                                                    <h6><a href="{{i.prodt.get_url}}">{{i.prodt.name}}</a></h6>
+                                                    <p>1x - <span class="price">$10</span></p>
+                                                </div>
+                                                <span class="dropdown-product-remove"><i class="icon-cross"></i></span>
+                                            </li>
+                                            {% endfor %}
+                                            <li class="total">
+                                                <span class="pull-right">Total: {{t}}</span>
+                                                <a href="cartDetails" class="btn btn-sm btn-cart">Cart</a>
+                                                <a href="Checkout" class="btn btn-sm btn-checkout">Checkout</a>
+                                            </li>
+                                             
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Header Area End -->
+            <div class="main_header_area">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 d-md-flex justify-content-between">                           
+                            <!-- Menu Area -->
+                            <div class="main-menu-area">
+                                <nav class="navbar navbar-expand-lg align-items-start">
+
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#karl-navbar" aria-controls="karl-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="ti-menu"></i></span></button>
+
+                                    <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
+                                        <ul class="navbar-nav animated" id="nav">
+                                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                                            
+                                            <li class="nav-item"><a class="nav-link" href="#">Veg</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Non-Veg</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Juices</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">hot</span> Offers</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Rate Us</a></li>
+
+                                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ****** Header Area End ****** -->
+
+
+        <!-- ****** Checkout Area Start ****** -->
+        <div class="checkout_area section_padding_100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-md-6">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-page-heading">
+                                <h5>Billing Address</h5>
+                                <p>Enter your cupone code</p>
+                            </div>
+
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="first_name">First Name <span>*</span></label>
+                                        <input type="text" class="form-control" id="first_name" value="" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="last_name">Last Name <span>*</span></label>
+                                        <input type="text" class="form-control" id="last_name" value="" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="company">Company Name</label>
+                                        <input type="text" class="form-control" id="company" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="country">Country <span>*</span></label>
+                                        <select class="custom-select d-block w-100" id="country">
+                                        <option value="usa">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="ger">Germany</option>
+                                        <option value="fra">France</option>
+                                        <option value="ind">India</option>
+                                        <option value="aus">Australia</option>
+                                        <option value="bra">Brazil</option>
+                                        <option value="cana">Canada</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="street_address">Address <span>*</span></label>
+                                        <input type="text" class="form-control mb-3" id="street_address" value="">
+                                        <input type="text" class="form-control" id="street_address2" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="postcode">Postcode <span>*</span></label>
+                                        <input type="text" class="form-control" id="postcode" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="city">Town/City <span>*</span></label>
+                                        <input type="text" class="form-control" id="city" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="state">Province <span>*</span></label>
+                                        <input type="text" class="form-control" id="state" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="phone_number">Phone No <span>*</span></label>
+                                        <input type="number" class="form-control" id="phone_number" min="0" value="">
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label for="email_address">Email Address <span>*</span></label>
+                                        <input type="email" class="form-control" id="email_address" value="">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <!-- <div class="custom-control custom-checkbox d-block mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Terms and conitions</label>
+                                        </div> -->
+                                        <div class="custom-control custom-checkbox d-block mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                            <label class="custom-control-label" for="customCheck2">Create an accout</label>
+                                        </div>
+                                        <!-- <div class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                            <label class="custom-control-label" for="customCheck3">Subscribe to our newsletter</label>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                        <div class="order-details-confirmation">
+
+                            <div class="cart-page-heading">
+                                <h5>Your Order</h5>
+                                <p>The Details</p>
+                            </div>
+                              {% for i in ci %}
+                            <ul class="order-details-form mb-4">
+                                <li><span>Product</span> <span>Total</span></li>
+                                <li><span>{{i.prodt.name}}</span> <span>{{i.prodt.price}}</span></li>
+                                <li><span>Subtotal</span> <span>{{i.total}}</span></li>
+                                <li><span>Shipping</span> <span>Free</span></li>
+                                <li><span>Total</span> <span>{{i.total}}</span></li>
+                            </ul>
+                            {% endfor %}
+
+
+                            <div id="accordion" role="tablist" class="mb-4">
+                              
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingTwo">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-circle-o mr-3"></i>cash on delievery</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quis in veritatis officia inventore, tempore provident dignissimos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingThree">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-circle-o mr-3"></i>credit card</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quo sint repudiandae suscipit ab soluta delectus voluptate, vero vitae</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingFour">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><i class="fa fa-circle-o mr-3"></i>direct bank transfer</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est cum autem eveniet saepe fugit, impedit magni.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#" class="btn karl-checkout-btn">Place Order</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ****** Checkout Area End ****** -->                        
+        
+    </div>
+    <!-- /.wrapper end -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{% static 'cr/js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'cr/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'cr/js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'cr/js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'cr/js/active.js' %}"></script>
+
+</body>
+
+</html>
+{% endblock %}

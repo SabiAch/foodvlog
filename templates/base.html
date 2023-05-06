@@ -1,0 +1,52 @@
+{% load static %}
+
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>ShoppingApp</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{% static 'hm/layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+ <div class="bgded overlay" style="background-image:url({%static 'cr/img/bg-img/bg-2.jpg' %});"> 
+   <!-- ################################################################################################ -->
+
+    <!-- ################################################################################################ -->
+     <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+   <div class="wrapper row1">
+     <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left"> 
+        <!-- ################################################################################################ -->
+        <h1><center><a href="/">@foodyshop</a></center></h1>
+        <!-- ################################################################################################ -->
+      </div>
+      <nav id="mainav" class="fl_right"> 
+        <!-- ################################################################################################ -->
+        <ul class="clear">
+          <li><a class="active" href="/">Home</a></li>
+          {% if user.is_authenticated %}
+          <li><b>Hai {{user.username}}</b></li>
+          <li><a class="active" href="accounts/logout">Logout</a></li>
+          {% else %}      
+          <li><a class="active" href="accounts/register">Register</a></li>
+          <li><a class="active" href="accounts/login">Login</a></li>
+          {% endif %}
+          
+          <li><a class="active" href="cart/cartDetails"><i class="fa fa-shopping-cart" style="font-size:18px; color:white;">&nbsp;<b>{{itc}}</b></i></a></li>
+        
+        </ul>    
+        <!-- ################################################################################################ -->
+      </nav>
+     </header>
+    </div>
+  </div>
+  {% block content %}
+  {% endblock %}
+  
+  </body>
+</html>

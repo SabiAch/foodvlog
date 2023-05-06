@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title> Cart</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'cr/img/core-img/favicon.ico' %}">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'cr/css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'cr/style.css' %}">
+
+    <!-- Responsive CSS -->
+    <link href="{% static 'cr/css/responsive.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    {% comment %} <div class="catagories-side-menu">
+        <!-- Close Icon -->
+        <div id="sideMenuClose">
+            <i class="ti-close"></i>
+        </div>
+        <!--  Side Nav  -->
+        <div class="nav-side-menu">
+            <div class="menu-list">
+                <h6>Categories</h6>
+                
+                <ul id="menu-content" class="menu-content collapse out">
+                    <!-- Single Item -->
+                    
+                    <li data-toggle="collapse" data-target="#vegitable" class="collapsed active">
+                        
+                        <a href="#">Women Dresses <span class="arrow"></span></a>
+                        
+                        <ul class="sub-menu collapse" id="women">
+                            <li><a href="#">Churidar</a></li>
+                           
+                            <li><a href="#">Maxi Dresses</a></li>
+                            <li><a href="#">Prom Dresses</a></li>
+                            <li><a href="#">Little Black Dresses</a></li>
+                            <li><a href="#">Mini Dresses</a></li>
+                        </ul>
+                       
+                    </li>
+                    
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#man" class="collapsed">
+                        <a href="#">Man Wear <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="man">
+                            <li><a href="#">Man Dresses</a></li>
+                            <li><a href="#">Man Black Dresses</a></li>
+                            <li><a href="#">Man Mini Dresses</a></li>
+                        </ul>
+                    </li>
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#kids" class="collapsed">
+                        <a href="#">Children <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="kids">
+                            <li><a href="#">Children Dresses</a></li>
+                            <li><a href="#">Mini Dresses</a></li>
+                        </ul>
+                    </li>
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#bags" class="collapsed">
+                        <a href="#">Bags &amp; Purses <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="bags">
+                            <li><a href="#">Bags</a></li>
+                            <li><a href="#">Purses</a></li>
+                        </ul>
+                    </li>
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#eyewear" class="collapsed">
+                        <a href="#">Eyewear <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="eyewear">
+                            <li><a href="#">Eyewear Style 1</a></li>
+                            <li><a href="#">Eyewear Style 2</a></li>
+                            <li><a href="#">Eyewear Style 3</a></li>
+                        </ul>
+                    </li>
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#footwear" class="collapsed">
+                        <a href="#">Footwear <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="footwear">
+                            <li><a href="#">Footwear 1</a></li>
+                            <li><a href="#">Footwear 2</a></li>
+                            <li><a href="#">Footwear 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                 
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <div id="wrapper">
+
+        <!-- ****** Header Area Start ****** -->
+        <header class="header_area bg-img background-overlay-white" style="background-image: url({% static 'cr/img/bg-img/bg-2.jpg' %});">
+            <!-- Top Header Area Start -->
+            <div class="top_header_area">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-end">
+
+                        <div class="col-12 col-lg-7">
+                            <div class="top_single_area d-flex align-items-center">
+                                <!-- Logo Area -->
+                                {% comment %} <div class="top_logo">
+                                    <a href="#"><img src="{% static 'cr/img/core-img/logo.png' %}" alt=""></a>
+                                </div>  {% endcomment %}
+                                <!-- Cart & Menu Area -->
+                                {% comment %} <div class="header-cart-menu d-flex align-items-center ml-auto"> {% endcomment %}
+                                    <!-- Cart Area -->
+                                    
+                                    {% comment %} <div class="header-right-side-menu ml-15">
+                                        <a href="#" id="sideMenuBtn"><i class="ti-menu" aria-hidden="true"></i></a>
+                                    </div> {% endcomment %}
+                                {% comment %} </div> {% endcomment %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Header Area End -->
+            <div class="main_header_area">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 d-md-flex justify-content-between">
+                            
+                            <!-- Menu Area -->
+                            <div class="main-menu-area">
+                                <nav class="navbar navbar-expand-lg align-items-start">
+
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#karl-navbar" aria-controls="karl-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="ti-menu"></i></span></button>
+
+                                    <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
+                                        <ul class="navbar-nav animated" id="nav">
+                                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+                                            <li class="nav-item active"><a class="nav-link" href="checkout">Checkout</a></li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                                <div class="dropdown-menu" aria-labelledby="karlDropdown">
+                                                    <a class="dropdown-item" href="shop.html">Shop</a>
+                                                    <a class="dropdown-item" href="item.html">Product Details</a></li>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- Help Line -->
+                            <div class="help-line">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ****** Header Area End ****** -->
+
+        <!-- ****** Top Discount Area Start ****** -->
+        <!-- <section class="top-discount-area d-md-flex align-items-center">
+            
+            
+        </section> 
+
+       <!-****** Cart Area Start ****** -->
+        <div class="cart_area section_padding_100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                
+                                </thead>
+                                <tbody>
+                                
+                                    
+                                    <tr>{% for i in ci %}
+                                        
+                                        <td class="cart_product_img d-flex align-items-center">
+                                            <a href={{i.prodt.get_url}}><img src={{i.prodt.img.url}} alt="{{i.prodt.name}}"></a>
+                                            <a href={{i.prodt.get_url}} ><h6>{{i.prodt.name}}</h6></a>
+                                            <a href="{% url 'remove' i.prodt.id %}"><i class="fa fa-trash-o" style="font-size:20px"></i></a>
+                                            <p>Qty:{{i.quant}}</p>
+                                        </td>
+                                        <td class="price"><span>{{i.prodt.price}}</span></td>
+                                        <td class="qty">
+                                            <div class="quantity">
+                                                <a href="{% url 'cart_decrement' i.prodt.id %}"><i class="fa fa-minus" style="font-size:10px"></i></a>
+                                                   &nbsp;&nbsp;&nbsp;&nbsp;<b>{{i.quant}}<b>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <a href="{% url 'addcart' i.prodt.id %}"><i class="fa fa-plus" style="font-size:10px"></i></a>
+                                            </div>
+                                        </td>
+                                        <td class="total_price"><span>{{i.total}}</span></td>
+                                      
+                                        
+                                    </tr>
+                                     {% endfor %}
+                               
+                                </tbody>
+                                
+                            </table>
+                           
+                        </div>
+                        
+                        <div class="cart-footer d-flex mt-30">
+                            <div class="back-to-shop w-50">
+                                <a href="/">Continue shopping</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <center>
+                <div class="row">
+                    {% comment %} <div class="col-12 col-md-6 col-lg-4">
+                        <div class="coupon-code-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Cupon code</h5>
+                                <p>Enter your cupone code</p>
+                            </div>
+                            <form action="#">
+                                <input type="search" name="search" placeholder="#569ab15">
+                                <button type="submit">Apply</button>
+                            </form>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="col-12 col-md-6 col-lg-4">
+                        <div class="shipping-method-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Shipping method</h5>
+                                <p>Select the one you want</p>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Next day delivery</span><span>$4.99</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Standard delivery</span><span>$1.99</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Personal Pickup</span><span>Free</span></label>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    
+                    <div class="col-12 col-lg-12">
+                        <div class="cart-total-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Cart total</h5>
+                                <p>Final info</p>
+                            </div>
+
+                            <ul class="cart-total-chart">
+                                <li><span>Shipping</span> <span>Free</span></li>
+                                <li><span><strong>Total</strong></span> <span><strong>Rs :{{t}}</strong></span></li>
+                            </ul>
+                            <a href="checkout" class="btn karl-checkout-btn">Proceed to checkout</a>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        </center>
+        <!-- ****** Cart Area End ****** -->
+
+        <!-- ****** Footer Area Start ****** -->
+        
+        <!-- ****** Footer Area End ****** -->
+    </div>
+    <!-- /.wrapper end -->
+
+    <!--jQuery (Necessary for All JavaScript Plugins)-->
+    <script src="{% static 'cr/js/jquery/jquery-2.2.4.min.js' %}"> </script>
+    <!-- Popper js -->
+    <script src="{% static 'cr/js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'cr/js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'cr/js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'cr/js/active.js' %}"></script> 
+</body>
+
+</html>
+{% endblock %}
